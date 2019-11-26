@@ -42,6 +42,10 @@ func start(conn net.Conn, client int) {
 					continue
 				}
 
+				if rand.Intn(10)%2 == 1 {
+					num = 0
+				}
+
 				if hcard > gcard {
 					guest.money -= num
 					host.money += num

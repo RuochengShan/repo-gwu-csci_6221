@@ -8,7 +8,7 @@ import (
 	"github.com/mattn/go-gtk/gtk"
 	"net"
 	"os"
-	"project1/uiControl"
+	"repo-gwu-csci_6221/uiControl"
 )
 
 var conn net.Conn

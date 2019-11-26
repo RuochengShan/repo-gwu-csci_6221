@@ -10,6 +10,7 @@ import (
 	"net"
 	"strconv"
 	"strings"
+	"time"
 )
 
 var conn net.Conn
@@ -20,28 +21,29 @@ var money1 string
 var money2 string
 var img1 *gtk.Image
 var img2 *gtk.Image
-var roundLabel *gtk.Label
-var moneyLabel *gtk.Label
+
 var infoLabel *gtk.Label
 
 type GameJoin struct {
-	LabelInfo  *gtk.Label
-	LabelRound *gtk.Label
-	LabelMoney *gtk.Label
-	Builder    *gtk.Builder
-	Img1       *gtk.Image
-	Img2       *gtk.Image
+	LabelInfo   *gtk.Label
+	LabelRound  *gtk.Label
+	LabelMoney  *gtk.Label
+	LabelMoney1 *gtk.Label
+	Builder     *gtk.Builder
+	Img1        *gtk.Image
+	Img2        *gtk.Image
 }
 
 type GameProcess struct {
-	LabelInfo  *gtk.Label
-	LabelRound *gtk.Label
-	LabelMoney *gtk.Label
-	Img1       *gtk.Image
-	Img2       *gtk.Image
-	Betnumber  string
-	OppLabel   *gtk.Label
-	YouLabel   *gtk.Label
+	LabelInfo   *gtk.Label
+	LabelRound  *gtk.Label
+	LabelMoney  *gtk.Label
+	LabelMoney1 *gtk.Label
+	Img1        *gtk.Image
+	Img2        *gtk.Image
+	Betnumber   string
+	OppLabel    *gtk.Label
+	YouLabel    *gtk.Label
 }
 
 func Create(ctk *glib.CallbackContext) {
@@ -61,7 +63,7 @@ func Join(ctk *glib.CallbackContext) {
 		infoLabel = data.LabelInfo
 		roundLabel := data.LabelRound
 		moneyLabel := data.LabelMoney
-
+		moneyLabel1 := data.LabelMoney1
 		img1 = data.Img1
 		img2 = data.Img2
 
@@ -82,6 +84,7 @@ func Join(ctk *glib.CallbackContext) {
 		infoLabel.ModifyFG(gtk.STATE_NORMAL, gdk.NewColor("white"))
 		roundLabel.SetText(round)
 		moneyLabel.SetText(money1)
+		moneyLabel1.SetText(money2)
 	}
 }
 
@@ -91,15 +94,16 @@ func Bet(ctk *glib.CallbackContext) {
 	if ok {
 		//roundLabel := data.LabelRound
 		//moneyLabel := data.LabelMoney
+		time.Sleep(2 * time.Second)
 		betNumber := data.Betnumber
 		img1 := data.Img1
 		img2 := data.Img2
 		youLabel := data.YouLabel
 		oppLabel := data.OppLabel
-		youLabel.SetText("You bet" + betNumber)
+		youLabel.SetText("You bet " + betNumber)
 		youLabel.ModifyFG(gtk.STATE_NORMAL, gdk.NewColor("white"))
 
-		oppLabel.SetText("He bet" + betNumber)
+		oppLabel.SetText("He bet " + betNumber)
 		oppLabel.ModifyFG(gtk.STATE_NORMAL, gdk.NewColor("white"))
 
 		// send betnum to server and get the result
@@ -124,6 +128,10 @@ func Bet(ctk *glib.CallbackContext) {
 			infoLabel.SetText("Game end")
 		}
 		round = arr[0]
+
+		if money1 == arr[1] {
+			oppLabel.SetText("fold")
+		}
 		money1 = arr[1]
 		money2 = arr[2]
 		cardNumber1 = arr[3]
@@ -141,12 +149,14 @@ func NextButton(ctk *glib.CallbackContext) {
 		oppLabel := data.OppLabel
 		roundLabel := data.LabelRound
 		moneyLabel := data.LabelMoney
+		moneyLabel1 := data.LabelMoney1
 		ChangePic(img1, "back")
 		ChangePic(img2, cardNumber2)
 		youLabel.SetText("")
 		oppLabel.SetText("")
 		roundLabel.SetText(round)
 		moneyLabel.SetText(money1)
+		moneyLabel1.SetText(money2)
 	}
 }
 
