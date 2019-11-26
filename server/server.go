@@ -15,7 +15,7 @@ func main() {
 	}
 	// Close the listener when the application closes.
 	defer l.Close()
-	fmt.Println("Let's have a party")
+	fmt.Println("server started at port 8081")
 	for i := 0; ; i++ {
 		// Listen for an incoming connection.
 		conn, err := l.Accept()

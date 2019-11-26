@@ -48,6 +48,10 @@ func main() {
 	moneyLabel := gtk.LabelFromObject(builder.GetObject("money"))
 	moneyLabel.SetText("Money")
 	moneynumLabel := gtk.LabelFromObject(builder.GetObject("moneynum"))
+	moneyLabel1 := gtk.LabelFromObject(builder.GetObject("money1"))
+	moneyLabel1.SetText("Money")
+	moneynumLabel1 := gtk.LabelFromObject(builder.GetObject("moneynum1"))
+
 	infoLabel := gtk.LabelFromObject(builder.GetObject("info"))
 
 	youLabel := gtk.LabelFromObject(builder.GetObject("youlabel"))
@@ -63,49 +67,53 @@ func main() {
 	foldButton := gtk.ButtonFromObject(builder.GetObject("foldButton"))
 
 	process01 := uiControl.GameProcess{
-		LabelInfo:  infoLabel,
-		LabelRound: roundnumLabel,
-		LabelMoney: moneynumLabel,
-		Img1:       img1,
-		Img2:       img2,
-		Betnumber:  "0",
-		YouLabel:   youLabel,
-		OppLabel:   oppLabel,
+		LabelInfo:   infoLabel,
+		LabelRound:  roundnumLabel,
+		LabelMoney:  moneynumLabel,
+		LabelMoney1: moneynumLabel1,
+		Img1:        img1,
+		Img2:        img2,
+		Betnumber:   "0",
+		YouLabel:    youLabel,
+		OppLabel:    oppLabel,
 	}
 	foldButton.Clicked(uiControl.Bet, process01)
 
 	process0 := uiControl.GameProcess{
-		LabelInfo:  infoLabel,
-		LabelRound: roundnumLabel,
-		LabelMoney: moneynumLabel,
-		Img1:       img1,
-		Img2:       img2,
-		Betnumber:  "",
-		YouLabel:   youLabel,
-		OppLabel:   oppLabel,
+		LabelInfo:   infoLabel,
+		LabelRound:  roundnumLabel,
+		LabelMoney:  moneynumLabel,
+		LabelMoney1: moneynumLabel1,
+		Img1:        img1,
+		Img2:        img2,
+		Betnumber:   "",
+		YouLabel:    youLabel,
+		OppLabel:    oppLabel,
 	}
 	nextButton.Clicked(uiControl.NextButton, process0)
 
 	// set up buttons actions
 	process1 := uiControl.GameProcess{
-		LabelInfo:  infoLabel,
-		LabelRound: roundnumLabel,
-		LabelMoney: moneynumLabel,
-		Img1:       img1,
-		Img2:       img2,
-		Betnumber:  "10",
-		YouLabel:   youLabel,
-		OppLabel:   oppLabel,
+		LabelInfo:   infoLabel,
+		LabelRound:  roundnumLabel,
+		LabelMoney:  moneynumLabel,
+		LabelMoney1: moneynumLabel1,
+		Img1:        img1,
+		Img2:        img2,
+		Betnumber:   "10",
+		YouLabel:    youLabel,
+		OppLabel:    oppLabel,
 	}
 	process2 := uiControl.GameProcess{
-		LabelInfo:  infoLabel,
-		LabelRound: roundnumLabel,
-		LabelMoney: moneynumLabel,
-		Img1:       img1,
-		Img2:       img2,
-		Betnumber:  "20",
-		YouLabel:   youLabel,
-		OppLabel:   oppLabel,
+		LabelInfo:   infoLabel,
+		LabelRound:  roundnumLabel,
+		LabelMoney:  moneynumLabel,
+		LabelMoney1: moneynumLabel1,
+		Img1:        img1,
+		Img2:        img2,
+		Betnumber:   "20",
+		YouLabel:    youLabel,
+		OppLabel:    oppLabel,
 	}
 	process3 := uiControl.GameProcess{
 		LabelInfo:  infoLabel,
@@ -125,12 +133,13 @@ func main() {
 	createButton.Clicked(uiControl.Create, infoLabel)
 
 	joinInfo := uiControl.GameJoin{
-		LabelInfo:  infoLabel,
-		LabelRound: roundnumLabel,
-		LabelMoney: moneynumLabel,
-		Builder:    builder,
-		Img1:       img1,
-		Img2:       img2,
+		LabelInfo:   infoLabel,
+		LabelRound:  roundnumLabel,
+		LabelMoney:  moneynumLabel,
+		LabelMoney1: moneynumLabel1,
+		Builder:     builder,
+		Img1:        img1,
+		Img2:        img2,
 	}
 	joinButton.Clicked(uiControl.Join, joinInfo)
 
