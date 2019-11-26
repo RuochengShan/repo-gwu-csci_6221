@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.0"/>
+  <object class="GtkWindow" id="window1">
+    <property name="name">window1</property>
+    <property name="width_request">800</property>
+    <property name="height_request">600</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="decorated">False</property>
+    <property name="deletable">False</property>
+    <property name="gravity">static</property>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="name">fix1</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="bet10">
+            <property name="label" translatable="yes">Bet 10</property>
+            <property name="name">button1</property>
+            <property name="width_request">70</property>
+            <property name="height_request">33</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">207</property>
+            <property name="y">532</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="bet20">
+            <property name="label" translatable="yes">Bet 20</property>
+            <property name="name">button1</property>
+            <property name="width_request">70</property>
+            <property name="height_request">33</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">298</property>
+            <property name="y">532</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="image1">
+            <property name="width_request">124</property>
+            <property name="height_request">184</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="stock">gtk-missing-image</property>
+            <property name="icon_size">0</property>
+          </object>
+          <packing>
+            <property name="x">315</property>
+            <property name="y">295</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="image2">
+            <property name="width_request">124</property>
+            <property name="height_request">184</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="stock">gtk-missing-image</property>
+            <property name="icon_size">0</property>
+          </object>
+          <packing>
+            <property name="x">315</property>
+            <property name="y">74</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="createButton">
+            <property name="label" translatable="yes">CREATE</property>
+            <property name="width_request">100</property>
+            <property name="height_request">28</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">166</property>
+            <property name="y">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="joinButton">
+            <property name="label" translatable="yes">JOIN</property>
+            <property name="width_request">100</property>
+            <property name="height_request">30</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">497</property>
+            <property name="y">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="round">
+            <property name="width_request">66</property>
+            <property name="height_request">54</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Round</property>
+          </object>
+          <packing>
+            <property name="x">687</property>
+            <property name="y">18</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="roundnum">
+            <property name="width_request">70</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">686</property>
+            <property name="y">68</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="money">
+            <property name="width_request">84</property>
+            <property name="height_request">55</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Money</property>
+          </object>
+          <packing>
+            <property name="x">22</property>
+            <property name="y">458</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAccelLabel" id="moneynum">
+            <property name="width_request">100</property>
+            <property name="height_request">32</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">18</property>
+            <property name="y">501</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="bet30">
+            <property name="label" translatable="yes">Bet 50</property>
+            <property name="name">button1</property>
+            <property name="width_request">70</property>
+            <property name="height_request">33</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">391</property>
+            <property name="y">532</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="info">
+            <property name="width_request">179</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">53</property>
+            <property name="y">240</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="opplabel">
+            <property name="width_request">186</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">532</property>
+            <property name="y">149</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="youlabel">
+            <property name="width_request">186</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">526</property>
+            <property name="y">365</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="nextRound">
+            <property name="label" translatable="yes">next round</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">622</property>
+            <property name="y">493</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="money1">
+            <property name="width_request">84</property>
+            <property name="height_request">55</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Money</property>
+          </object>
+          <packing>
+            <property name="x">22</property>
+            <property name="y">33</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAccelLabel" id="moneynum1">
+            <property name="width_request">100</property>
+            <property name="height_request">32</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">18</property>
+            <property name="y">78</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="foldButton">
+            <property name="label" translatable="yes">Flod</property>
+            <property name="name">foldButton</property>
+            <property name="width_request">70</property>
+            <property name="height_request">33</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">483</property>
+            <property name="y">532</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
