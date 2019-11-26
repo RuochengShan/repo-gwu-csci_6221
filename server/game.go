@@ -24,7 +24,8 @@ func start(conn net.Conn, client int) {
 		hcard := host.cards[ind1]
 		gcard := guest.cards[ind2]
 
-		fmt.Fprintf(conn, "Round [%d] - Your Money Remain: %d. You get the card [%d], how much do you bet\n", 10-i, guest.money, gcard)
+		//fmt.Fprintf(conn, "Round [%d] - Your Money Remain: %d. You get the card [%d], how much do you bet\n", 10-i, guest.money, gcard)
+		fmt.Fprintf(conn, "%d %d %d %d %d 0\n", 10-i, guest.money, host.money, gcard, hcard)
 
 		host.cards = remove(host.cards, ind1)
 		guest.cards = remove(guest.cards, ind2)
@@ -36,7 +37,7 @@ func start(conn net.Conn, client int) {
 				continue
 			}
 			if num, err := strconv.ParseInt(message[0:len(message)-1], 10, 64); err == nil {
-				if num > guest.money || num <= 0 {
+				if num > guest.money || num < 0 {
 					fmt.Fprintf(conn, "Please give me a number between 0 and %d\n", guest.money)
 					continue
 				}
@@ -52,12 +53,14 @@ func start(conn net.Conn, client int) {
 
 				if guest.money <= 0 {
 					defer conn.Close()
-					conn.Write([]byte("Opps! You Lose!!!!!\n"))
+					fmt.Fprintf(conn, "%d %d %d %d %d 1\n", 10-i, guest.money, host.money, gcard, hcard)
+					//conn.Write([]byte("Opps! You Lose!!!!!\n"))
 					return
 				}
 				if host.money <= 0 {
 					defer conn.Close()
-					conn.Write([]byte("Congradulations! You Win!!!!!\n"))
+					fmt.Fprintf(conn, "%d %d %d %d %d 1\n", 10-i, guest.money, host.money, gcard, hcard)
+					//conn.Write([]byte("Congradulations! You Win!!!!!\n"))
 					return
 				}
 
